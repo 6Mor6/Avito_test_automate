@@ -167,48 +167,4 @@ def test_open_task_card(driver):
 
     allure.attach("Тест пройден: все поля формы совпали (без статуса)", "Результат", attachment_type=allure.attachment_type.TEXT)
 
-
-# @allure.epic("Таск-трекер")
-# @allure.feature("Карточка задачи")
-# @allure.story("Открытие карточки задачи")
-# @allure.title("Открытие карточки задачи через модальное окно редактирования")
-# def test_open_task_card(driver):
-#     task_page = TaskPage(driver)
-
-#     task_title = "E2E Test last"
-#     description = "Тетсовое описание"
-#     project = "Рефакторинг API"
-#     priority = "Low"
-#     assignee = "Максим Орлов"
-
-#     task_page.open()
-
-#     # Прокручиваем до низа — чтобы загрузились все задачи
-#     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-#     time.sleep(2)
-#     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-#     time.sleep(4)
-
-#     # Открываем форму редактирования
-#     card_data = task_page.open_task_card(task_title)
-
-#     # Проверяем все поля
-#     assert card_data["title"] == task_title, f"Ожидалось название '{task_title}', получено '{card_data['title']}'"
-#     assert card_data["description"] == description, f"Ожидалось описание '{description}', получено '{card_data['description']}'"
-#     assert card_data["project"] == project, f"Ожидался проект '{project}', получено '{card_data['project']}'"
-#     assert card_data["priority"] == priority, f"Ожидался приоритет '{priority}', получено '{card_data['priority']}'"
-#     assert card_data["assignee"] == assignee, f"Ожидался исполнитель '{assignee}', получено '{card_data['assignee']}'"
-
-#     print(f"🔍 Получены данные из формы редактирования: {card_data}")
-
-#     # 📸 Скриншот формы
-#     allure.attach(
-#         driver.get_screenshot_as_png(),
-#         name="Форма редактирования задачи",
-#         attachment_type=allure.attachment_type.PNG
-#     )
-
-#     # 🚪 Закрываем форму
-#     task_page.close_task_form()
-
     
