@@ -16,10 +16,10 @@ class TaskPage:
 
     CREATE_BUTTON_IN_FORM = (By.XPATH, "//div[@class='MuiBox-root css-yd8sa2']//button[normalize-space(text()) = 'Создать']")
 
-    # ✅ ФИНАЛЬНЫЙ ЛОКАТОР ФОРМЫ
+    # ✅  ЛОКАТОР ФОРМЫ
     EDIT_TASK_FORM_H5 = (By.XPATH, "//h5[normalize-space(.) = 'Редактирование задачи']")
 
-    # ✅ ИСПРАВЛЕННЫЕ ЛОКАТОРЫ ПОЛЕЙ — ИСПОЛЬЗУЕМ //following::div
+    # ✅  ЛОКАТОРЫ ПОЛЕЙ — ИСПОЛЬЗУЕМ //following::div
     TASK_TITLE_INPUT_VALUE = (By.XPATH, "//label[normalize-space(text()) = 'Название']//following::div[@class='MuiInputBase-root']//input[@type='text']")
     TASK_DESCRIPTION_TEXTAREA = (By.XPATH, "//label[normalize-space(text()) = 'Описание']//following::div[@class='MuiInputBase-root']//textarea")
     TASK_PROJECT_SELECT = (By.XPATH, "//label[normalize-space(text()) = 'Проект']//following::div[@role='combobox']")
@@ -102,7 +102,7 @@ class TaskPage:
     def _get_last_task_title_locator(self):
         return (By.XPATH, "(//div[contains(@class, 'MuiPaper-root')]//h6[contains(@class, 'MuiTypography-subtitle1')])[last()]")
 
-    # ✅ ФИНАЛЬНЫЙ МЕТОД — ОТКРЫТИЕ ФОРМЫ РЕДАКТИРОВАНИЯ
+    # ✅  МЕТОД — ОТКРЫТИЕ ФОРМЫ РЕДАКТИРОВАНИЯ
     def open_task_card(self, task_title):
         self.wait.until(
             EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'MuiPaper-root')]//h6[contains(@class, 'MuiTypography-subtitle1')]"))
